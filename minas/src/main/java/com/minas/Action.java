@@ -44,7 +44,9 @@ public class Action {
 			public void run() {
 				ImageView imageView = imageViewWeakReference.get();
 				if (imageView != null) {
-					imageView.setImageResource(preLoadResource);
+					if (!(request.getKey().equals(imageView.getTag()))) {
+						imageView.setImageResource(preLoadResource);
+					}
 				}
 			}
 		});
@@ -106,6 +108,7 @@ public class Action {
 										}
 										ImageView imageView = imageViewWeakReference.get();
 										if (imageView != null) {
+											imageView.setTag(request.getKey());
 											if (response.getSource() == Source.RAM) {
 												imageView.setImageBitmap(response.getBitmap());
 												minas.removeAction(imageView);

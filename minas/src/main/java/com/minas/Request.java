@@ -44,7 +44,11 @@ public class Request {
 	public Response execute() {
 		try {
 			Bitmap bitmap = load();
-			return new Response(bitmap, source);
+			if (bitmap != null) {
+				return new Response(bitmap, source);
+			} else {
+				return new Response(new NullPointerException("bitmap is null"));
+			}
 		} catch (LoadException e) {
 			return new Response(e);
 		}
