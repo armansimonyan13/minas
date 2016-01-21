@@ -1,0 +1,11 @@
+<resources>
+	<string name="app_name">Sample</string>
+	<string name="action_settings">Settings</string>
+
+	<string name="url_0">http://%s:8888/spring_0.jpg</string>
+	<string name="url_1">http://%s:8888/spring_1.jpg</string>
+	<string name="url_2">http://%s:8888/spring_2.jpg</string>
+	<string name="url_3">http://%s:8888/spring_3.jpg</string> <!-- this url is incorrect -->
+
+	<string name="ip">192.168.1.202</string>
+</resources>
